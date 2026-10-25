@@ -10,10 +10,10 @@
           rel="stylesheet">
     <style>
         :root {
-            --paper: #ecefe7;
-            --ink: #5a5959;
+            --paper: #fffefe;
+            --ink: #4f4f4f;
             --moss: #2f4d3c;
-            --clay: #854b27;
+            --clay: #9e592e;
             --signal: #e8b628;
             --line: #c9d0c2;
             --card: #f8f9f4
@@ -55,40 +55,45 @@
             color: var(--paper);
             position: sticky;
             top: 0;
-            z-index: 5
+            z-index: 5;
+            transition: box-shadow .3s ease
+        }
+
+        header.small {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .25)
         }
 
         header .wrap {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
-            min-height: 64px;
+            gap: 12px;
+            min-height: 90px;
             flex-wrap: wrap;
-            transition: min-height .25s ease
+            transition: min-height .3s ease
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 13px;
             font-family: Fraunces, Georgia, serif;
             font-weight: 700;
-            font-size: 20px;
+            font-size: 23px;
             letter-spacing: .01em;
-            transition: height .25s ease
+            transition: font-size .3s ease
         }
 
         .brand img {
             height: 44px;
             width: auto;
             display: block;
-            transition: height .25s ease
+            transition: height .3s ease
         }
 
         nav {
             display: flex;
-            gap: 4px;
+            gap: 5px;
             flex-wrap: wrap
         }
 
@@ -97,11 +102,11 @@
             border-radius: 6px;
             font-weight: 500;
             font-size: 15px;
-            transition: padding .25s ease, background .15s
+            transition: padding .3s ease, font-size .3s ease, background .15s
         }
 
         nav a:hover {
-            background: rgba(255, 255, 255, .12)
+            background: rgb(79, 79, 79)
         }
 
         nav a[aria-current] {
@@ -126,18 +131,38 @@
             font-size: 17px
         }
 
+        header.small .brand img {
+            height: 32px
+        }
+
         header.small nav a {
-            padding: 5px 12px
+            padding: 5px 12px;
+            font-size: 14px
         }
 
         @media (prefers-reduced-motion: reduce) {
-            header .wrap, .brand, nav a {
+            header, header .wrap, .brand, .brand img, nav a {
                 transition: none
             }
         }
 
+        /* full-width banner at the top, same as the other pages */
+        .banner {
+            margin: 0
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 440px;
+            object-fit: cover;
+            border-radius: 0;
+            background: #000
+        }
+
         .hero {
-            padding: 56px 0 32px
+            padding: 14px 0 40px
         }
 
         .hero h1 {
@@ -146,22 +171,8 @@
             font-size: clamp(32px, 4.8vw, 54px);
             line-height: 1.1;
             letter-spacing: -.015em;
-            margin: 0 0 28px;
+            margin: 0;
             max-width: 16em
-        }
-
-        .banner {
-            margin: 0 auto 48px
-        }
-
-        .banner img {
-            display: block;
-            width: 100%;
-            height: auto;
-            max-height: 260px;
-            object-fit: cover;
-            border-radius: 10px;
-            background: #000
         }
 
         .chain {
@@ -173,7 +184,7 @@
 
         .layout {
             display: grid;
-            grid-template-columns:minmax(0, 1fr) 340px;
+            grid-template-columns: minmax(0, 1fr) 340px;
             gap: 48px;
             align-items: start;
             margin-bottom: 96px
@@ -209,9 +220,9 @@
 
         .figs {
             display: grid;
-            gap: 18px;
+            gap: 15px;
             position: sticky;
-            top: 84px
+            top: 80px
         }
 
         figure {
@@ -254,15 +265,20 @@
             color: #fff
         }
 
+        footer span a {
+            text-decoration: underline;
+            text-underline-offset: 3px
+        }
+
         @media (max-width: 900px) {
             .layout {
-                grid-template-columns:1fr;
+                grid-template-columns: 1fr;
                 gap: 32px
             }
 
             .figs {
                 position: static;
-                grid-template-columns:repeat(auto-fit, minmax(240px, 1fr))
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
             }
         }
     </style>
@@ -274,6 +290,7 @@
         <a class="brand" href="index.html">
             <img src="Images/Banners/Russels logo.png" alt="AVRI logo">
             <span>Animal Venom Research International</span>
+        </a>
         <nav aria-label="Main">
             <a href="index.html">Home</a>
             <a href="About%20AVRI.html">About us</a>
@@ -285,9 +302,12 @@
 </header>
 
 <main>
+    <div class="banner">
+        <img src="Images/Banners/hump-nose-banner-3.gif" alt="Hump-nosed viper banner">
+    </div>
+
     <div class="hero wrap">
         <h1>The Sri Lanka Antivenom Project</h1>
-        <div class="banner"><img src="Images/Banners/hump-nose-banner-3.gif" alt="Hump-nosed viper banner"></div>
     </div>
 
     <div class="wrap">
@@ -372,6 +392,15 @@
 <footer>
     <div class="wrap">
         <span>© Animal Venom Research International</span>
+        <span>Designed and developed by: Lithula Dilain Wijesinghe
+    <br>
+    Bomiriya Central College , Kaduwella , Sri Lanka , Grade 9
+    <br>
+    LinkedIn: <a href="https://www.linkedin.com/in/lithula-dilain-wijesinghe-2b08b93b3"
+                 target="_blank" rel="noopener noreferrer">linkedin.com/in/lithula-dilain-wijesinghe</a>
+    <br>
+    <a href="mailto:Lithula7@gmail.com">Lithula7@gmail.com</a>
+</span>
         <span><a href="About%20AVRI.html">About us</a> &nbsp; <a href="Contact.html">Contact</a> &nbsp; <a
                 href="Resources.html">Resources</a> &nbsp; <a href="Donate.html">Donate</a></span>
     </div>
@@ -379,9 +408,13 @@
 
 <script>
     const header = document.querySelector('header');
+    let small = false;
 
     function checkScroll() {
-        header.classList.toggle('small', window.scrollY > 40)
+        const y = window.scrollY;
+        if (!small && y > 80) small = true;
+        else if (small && y < 20) small = false;
+        header.classList.toggle('small', small);
     }
 
     window.addEventListener('scroll', checkScroll, {passive: true});

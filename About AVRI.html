@@ -56,7 +56,12 @@
             color: var(--paper);
             position: sticky;
             top: 0;
-            z-index: 5
+            z-index: 5;
+            transition: box-shadow .3s ease
+        }
+
+        header.small {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .25)
         }
 
         header .wrap {
@@ -66,7 +71,7 @@
             gap: 12px;
             min-height: 90px;
             flex-wrap: wrap;
-            transition: min-height .25s ease
+            transition: min-height .3s ease
         }
 
         .brand {
@@ -77,14 +82,14 @@
             font-weight: 700;
             font-size: 23px;
             letter-spacing: .01em;
-            transition: height .25s ease
+            transition: font-size .3s ease
         }
 
         .brand img {
             height: 44px;
             width: auto;
             display: block;
-            transition: height .25s ease
+            transition: height .3s ease
         }
 
         nav {
@@ -98,7 +103,7 @@
             border-radius: 6px;
             font-weight: 500;
             font-size: 15px;
-            transition: padding .25s ease, background .15s
+            transition: padding .3s ease, font-size .3s ease, background .15s
         }
 
         header.small .wrap {
@@ -114,7 +119,8 @@
         }
 
         header.small nav a {
-            padding: 5px 12px
+            padding: 5px 12px;
+            font-size: 14px
         }
 
         nav a:hover {
@@ -137,7 +143,7 @@
 
 
         @media (prefers-reduced-motion: reduce) {
-            header .wrap, .brand, nav a {
+            header, header .wrap, .brand, .brand img, nav a {
                 transition: none
             }
         }
@@ -283,6 +289,11 @@
 
         footer a:hover {
             color: #fff
+        }
+
+        footer span a {
+            text-decoration: underline;
+            text-underline-offset: 3px
         }
 
         @media (max-width: 720px) {
@@ -534,6 +545,15 @@
 <footer>
     <div class="wrap">
         <span>© Animal Venom Research International</span>
+        <span>Designed and developed by: Lithula Dilain Wijesinghe
+    <br>
+    Bomiriya Central College , Kaduwella , Sri Lanka , Grade 9
+    <br>
+    LinkedIn: <a href="https://www.linkedin.com/in/lithula-dilain-wijesinghe-2b08b93b3"
+                 target="_blank" rel="noopener noreferrer">linkedin.com/in/lithula-dilain-wijesinghe</a>
+    <br>
+    <a href="mailto:Lithula7@gmail.com">Lithula7@gmail.com</a>
+</span>
         <span><a href="About%20AVRI.html">About us</a> &nbsp; <a href="Contact.html">Contact</a> &nbsp; <a
                 href="Resources.html">Resources</a> &nbsp; <a href="Donate.html">Donate</a></span>
     </div>
@@ -541,9 +561,13 @@
 
 <script>
     const header = document.querySelector('header');
+    let small = false;
 
     function checkScroll() {
-        header.classList.toggle('small', window.scrollY > 40)
+        const y = window.scrollY;
+        if (!small && y > 80) small = true;
+        else if (small && y < 20) small = false;
+        header.classList.toggle('small', small);
     }
 
     window.addEventListener('scroll', checkScroll, {passive: true});
