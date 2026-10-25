@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About AVRI | Animal Venom Research International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            --paper: #fffefe;
+            --ink: #4f4f4f;
+            --moss: #2f4d3c;
+            --clay: #9e592e;
+            --signal: #e8b628;
+            --line: #c9d0c2;
+            --card: #f8f9f4
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 17px/1.6 "Public Sans", Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--clay);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+
+        header {
+            background: var(--ink);
+            color: var(--paper);
+            position: sticky;
+            top: 0;
+            z-index: 5
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            min-height: 90px;
+            flex-wrap: wrap;
+            transition: min-height .25s ease
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: 23px;
+            letter-spacing: .01em;
+            transition: height .25s ease
+        }
+
+        .brand img {
+            height: 44px;
+            width: auto;
+            display: block;
+            transition: height .25s ease
+        }
+
+        nav {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap
+        }
+
+        nav a {
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: padding .25s ease, background .15s
+        }
+
+        header.small .wrap {
+            min-height: 48px
+        }
+
+        header.small .brand {
+            font-size: 17px
+        }
+
+        header.small .brand img {
+            height: 32px
+        }
+
+        header.small nav a {
+            padding: 5px 12px
+        }
+
+        nav a:hover {
+            background: rgb(79, 79, 79)
+        }
+
+        nav a[aria-current] {
+            background: rgba(255, 255, 255, .16)
+        }
+
+        nav a.give {
+            background: var(--signal);
+            color: var(--ink);
+            font-weight: 600
+        }
+
+        nav a.give:hover {
+            background: #f3c84e
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+            header .wrap, .brand, nav a {
+                transition: none
+            }
+        }
+
+
+        /* full-width banner at the top, same as the home page */
+        .banner {
+            margin: 0
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 440px;
+            object-fit: cover;
+            border-radius: 0;
+            background: #000
+        }
+
+        .hero {
+            padding: 14px 0 40px
+        }
+
+        .hero h1 {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(34px, 5vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -.015em;
+            margin: 0
+        }
+
+        .chain {
+            height: 14px;
+            background: radial-gradient(ellipse 14px 6px at 50% 50%, var(--clay) 60%, transparent 62%) 0 0/36px 14px repeat-x;
+            opacity: .75;
+            margin: 0 0 48px
+        }
+
+        h2 {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 30px;
+            line-height: 1.2;
+            margin: 0 0 24px
+        }
+
+        section {
+            margin-bottom: 64px
+        }
+
+        .mission {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 32px;
+            align-items: start
+        }
+
+        .mission img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            background: #000
+        }
+
+        .mission p {
+            margin: 0 0 18px;
+            max-width: 42em
+        }
+
+        .mission p:first-child {
+            font-size: 19px;
+            color: var(--moss)
+        }
+
+        .org {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--clay);
+            margin: 0 0 14px
+        }
+
+        .people {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 28px
+        }
+
+        .person {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 22px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 18px
+        }
+
+        .person img {
+            width: 130px;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            background: #000
+        }
+
+        .role {
+            font-size: 14px;
+            color: var(--clay);
+            font-weight: 600;
+            margin: 0
+        }
+
+        .name {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.25;
+            margin: 2px 0 8px
+        }
+
+        .person p.bio {
+            margin: 0;
+            font-size: 15.5px;
+            color: #2d3e35;
+            max-width: 46em
+        }
+
+        footer {
+            background: var(--ink);
+            color: #b9c4b8;
+            padding: 32px 0;
+            font-size: 14px
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        footer a:hover {
+            color: #fff
+        }
+
+        @media (max-width: 720px) {
+            .mission {
+                grid-template-columns: 1fr
+            }
+
+            .mission img {
+                max-width: 160px
+            }
+
+            .person {
+                grid-template-columns: 90px 1fr;
+                gap: 14px;
+                padding: 14px
+            }
+
+            .person img {
+                width: 90px
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="wrap">
+        <a class="brand" href="index.html">
+            <img src="Images/Banners/Russels logo.png" alt="AVRI logo">
+            <span>Animal Venom Research International</span>
+        </a>
+        <nav aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="About%20AVRI.html" aria-current="page">About us</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contact.html">Contact</a>
+            <a class="give" href="Donate.html">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="banner">
+        <img src="Images/Banners/green-pit-banner.gif" alt="Green pit viper banner">
+    </div>
+
+    <div class="hero wrap">
+        <h1>About AVRI</h1>
+    </div>
+
+    <div class="wrap">
+        <section class="mission">
+            <img src="Images/Team/green-pit2.gif" alt="Green pit viper">
+            <div>
+                <p>Animal Venom Research International (AVRI) is a Non Profit Public Benefit Corporation of the United
+                    States of America, a body corporate and duly established under the California Secretary of State and
+                    Section 501 (c) 3 of the Federal Internal Revenue Code.</p>
+                <p>The mission of AVRI is to aid in the development of more effective prevention and treatment protocols
+                    for animal envenomation (bites or stings from venomous animals) by mediating between involved
+                    parties, educating medical personnel and the public in order to reduce morbidity and mortality
+                    around the world.</p>
+                <p>The technology exists to improve pharmacotherapies, treatment protocols and quality of care, at an
+                    affordable cost, within the regions suffering most from animal envenomation. The underserved
+                    populations afflicted by animal envenomation are in dire need of external support to champion their
+                    cause and AVRI is the organization that can serve as their advocate.</p>
+                <p>Furthermore, AVRI emphasizes animal conservation principles, with regard for all local laws, to
+                    minimize human/animal conflicts and prevent ecological imbalances. Venomous animals, while
+                    potentially harmful to humans, are also the victims of fear, myth and misinformation often leading
+                    to their being killed unnecessarily. These animals play an important role in the natural environment
+                    and need to be preserved. Through education and awareness, AVRI hopes to dispel fears, prevent
+                    harmful conflicts and preserve biodiversity.</p>
+            </div>
+        </section>
+
+        <div class="chain" aria-hidden="true"></div>
+
+        <section>
+            <h2>Executive Board of Directors</h2>
+            <div class="people">
+                <article class="person">
+                    <img src="Images/Team/Roy-HC.gif" alt="Roy Malleappah">
+                    <div><p class="role">Executive Director</p>
+                        <h3 class="name">Roy Malleappah</h3>
+                        <p class="bio">Herpetological Field Operations Specialist; Recipient of Humanitarian Service
+                            Awards from the Commando Regiment, Sri Lanka Army, for equipping a physiotherapy gym to help
+                            amputees in Sri Lanka, supplying prosthetics, and gel socks, Construction Engineer/General
+                            Contractor; Wildlife Conservationist.</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/Dana1.gif" alt="Dana Savorelli">
+                    <div><p class="role">Director of Field Operations</p>
+                        <h3 class="name">Dana Savorelli</h3>
+                        <p class="bio">Founder and President of Midwest Tongs, Inc.; Founder of the United States
+                            Snakebite Research Team; Founder and Director of Monkey Island Rescue and Zoological
+                            Sanctuary, Inc.</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/Laki3.gif" alt="Laki Wickremesinghe">
+                    <div><p class="role">Director of Finance and Planning</p>
+                        <h3 class="name">Laki Wickremesinghe</h3>
+                        <p class="bio">President of Wick Associates, a tax and management consultancy firm in
+                            California. Owns and manages various real estate holdings in California. Along with his
+                            wife, operates Montessori schools in Southern California. Graduate of University of North
+                            London, Waltham Forest College (U.K.), Isipathna College (Sri Lanka).</p></div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Collaborators</h2>
+            <p class="org">Instituto Clodomiro Picado, University of Costa Rica</p>
+            <div class="people">
+                <article class="person">
+                    <img src="Images/Team/icp.gif" alt="Instituto Clodomiro Picado">
+                    <div><p class="role">Antivenom Development and Production Consultants</p>
+                        <h3 class="name">Instituto Clodomiro Picado</h3>
+                        <p class="bio">ICP will be working with AVRI to produce a species, geographic specific antivenom
+                            for Sri Lanka and aid in transferring antivenom development technology. The mission of the
+                            Institute is to contribute to solving the problem of envenomings due to animal bites and
+                            stings in Costa Rica and other countries, as well as to contribute to national scientific
+                            and technological development, by means of a group effort involving research, teaching,
+                            social action and production activities.</p></div>
+                </article>
+            </div>
+            <p class="org">University of Peradeniya, Sri Lanka</p>
+            <div class="people">
+                <article class="person">
+                    <img src="Images/Team/Indika-Photo-sm.gif" alt="Professor Indika Gawarammana">
+                    <div><p class="role">Principal Investigator</p>
+                        <h3 class="name">Professor Indika Gawarammana, MBBS, MD, MRCP</h3>
+                        <p class="bio">Department of Medicine, Faculty of Medicine, University of Peradeniya; Consultant
+                            Physician at the Professorial Medical Unit of the Teaching Hospital, Peradeniya, Sri Lanka;
+                            Senior lecturer in Medicine; Senior lecturer in Clinical Toxicology; Conjoint Senior
+                            lecturer in Clinical Toxicology, University of Newcastle, Australia; Director of Clinical
+                            Research, South Asian Clinical Toxicology Research Collaboration.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Advisory Board</h2>
+            <div class="people">
+                <article class="person">
+                    <img src="Images/Team/Kolitha.gif" alt="Dr. Kolitha Sellahewa">
+                    <div><p class="role">Envenomation Consultant</p>
+                        <h3 class="name">Dr. Kolitha Sellahewa, MBBS, MD, FCCP, FRACP(Hon.), MACEP(Hon.)</h3>
+                        <p class="bio">Chairman Snakebite Expert Committee SLMA, Past President Ceylon College of
+                            Physicians; Wealth of experience and expertise in the management of snake bite in Sri Lanka;
+                            Published many peer reviewed articles on snakebite and conducted extensive clinical research
+                            on snakebite.</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/Prof.gif" alt="Professor Sarath Kotagama">
+                    <div><p class="role">Environmental and Conservation Advisor</p>
+                        <h3 class="name">Professor Sarath Kotagama, Ph.D.</h3>
+                        <p class="bio">Dr. Sarath Kotagama is Professor of Environmental Science at the University of
+                            Colombo, Sri Lanka, formerly Professor of Zoology, and is the current President of the Sri
+                            Lanka Association for the Advancement of Science (SLAAS). Prof. Kotagama received his Ph.D.
+                            from the University of Aberdeen in ornithology. He is famed both in Sri Lanka and overseas
+                            for his initiatives on conservation, zoological education, and promotion of field biology.
+                            He is the recipient of numerous international awards. Aside from his academic work, Prof.
+                            Kotagama was once head of the Department of Wildlife Conservation which oversees all
+                            protected wildlands and wildlife in Sri Lanka.</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/KOMODO_DRAGON-DOUG.gif" alt="Dr. Douglas R. Mader">
+                    <div><p class="role">Veterinary Consultant</p>
+                        <h3 class="name">Dr. Douglas R. Mader, MS, DVM, Diplomate ABVP, Fellow, Royal Society of
+                            Medicine</h3>
+                        <p class="bio">A graduate from the University of California, Davis and the co-owner the Marathon
+                            Veterinary Hospital, a referral hospital in the Conch Republic. Dr. Mader is a Diplomate of
+                            the American Board of Veterinary Practitioners (Canine and Feline Practice) and a Fellow in
+                            the Royal Society of Medicine. He is the consulting veterinarian for the Marathon Sea Turtle
+                            Hospital, the Monroe County Sheriff's Zoo, the Key West Aquarium and the Theater of the Sea.
+                            He is an international lecturer and has published numerous articles in scientific and
+                            veterinary journals, national magazines, and, is the author/editor of the Elsevier
+                            publication, Reptile Medicine and Surgery. Dr. Mader is the immediate Past President of the
+                            NAVC.</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/Dr.-Dangola.gif" alt="Dr. Ashoka Dangolla">
+                    <div><p class="role">Veterinary Consultant</p>
+                        <h3 class="name">Dr. Ashoka Dangolla, BVSc., Dip. Veterinary Epidemiology, PhD</h3>
+                        <p class="bio">Senior Lecturer in Veterinary Clinical Sciences, Faculty of Veterinary Medicine
+                            and Animal Science, University of Peradeniya. Coordinates activities between Police Kennels
+                            Division, Sri Lanka Army and the Temple of the Sacred Tooth relic of Lord Buddha, annual
+                            processions of national importance in which elephants participate, with the Faculty of
+                            Veterinary Medicine and Animal Science. Holds positions on the Board of Directors in center
+                            for disaster management at the Faculty of Medicine, a member of the board of study in
+                            Postgraduate Institute of Science (PGIS) in Zoology, member of teaching panel in disaster
+                            management at the PGIS, and of the MVSc program.</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/jimkristen.gif" alt="Jim Harrison and Kristen Wiley">
+                    <div><p class="role">Reptile Husbandry</p>
+                        <h3 class="name">Jim Harrison and Kristen Wiley</h3>
+                        <p class="bio">Directors, Kentucky Reptile Zoo</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/Bhante.gif" alt="Bhante Dr. Walpola Piyananda">
+                    <div><p class="role">Advisor for Religious and Cultural Affairs</p>
+                        <h3 class="name">Bhante Dr. Walpola Piyananda</h3>
+                        <p class="bio">Abbot and President of Dharma Vijaya Buddhist Vihara, Chief Sangha Nayake of
+                            America, President, Sri Lankan Sangha Council of America and Canada, President Buddhist
+                            Sangha Council of Southern California, Advisor to the President of Sri Lanka on
+                            International Religious Affairs.</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/Asoka-Yapa.gif" alt="Asoka Yapa">
+                    <div><p class="role">Public Relations Advisor</p>
+                        <h3 class="name">Asoka Yapa</h3>
+                        <p class="bio">Asoka Yapa trained as a zoologist, was Science Editor with the Canadian Forest
+                            Service, spent several years as a consultant to the Canadian International Development
+                            Agency, and was Director of Communications with several departments of the Government of
+                            Canada. He is the principal author of the forthcoming 'An Illustrated Guide to the Mammals
+                            of Sri Lanka', a landmark publication that will be the first comprehensive review of the
+                            island's mammals since 1935.</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/Dennis.gif" alt="Dennis Greene">
+                    <div><p class="role">Legal Counsel (USA)</p>
+                        <h3 class="name">Dennis Greene, JD, MBA</h3>
+                        <p class="bio">Currently in private practice with a concentration in civil litigation.
+                            Education: Pepperdine University School of Law, Oxford University, England, United States
+                            Air Force Academy; Former instructor of law. Military service in the United States Air
+                            Force, achieved the rank of Captain. Dennis served his country for two years as a pilot in
+                            the 469th Tactical Fighter Squadron from Korat Airbase, Thailand, where he flew the F 4-E
+                            "Phantom II" and for the 21st Tactical Airlift Squadron out of Clark Airfield, Philippines,
+                            flying the C-130 "Hercules".</p></div>
+                </article>
+                <article class="person">
+                    <img src="Images/Team/nihal.gif" alt="Nihal Jayamanne">
+                    <div><p class="role">Legal Counsel (Sri Lanka)</p>
+                        <h3 class="name">Nihal Jayamanne, President's Counsel</h3>
+                        <p class="bio">Member of the Advisory Council of Jurists of the Asia Pacific Forum for the
+                            Advancement of Human Rights, Chairman of the Law College Foundation and Member of the Board
+                            of Trustees of the Judicial Infrastructure Maintenance Trust. He was also President of the
+                            Bar Association of Sri Lanka, the Vice President of SAARCLAW and Member of the Law
+                            Commission of Sri Lanka and the National Police Commission of Sri Lanka. On the Boards of
+                            Sri Lankan Airlines Ltd, Sri Lankan Catering (Pvt) Ltd and Seylan Bank PLC. Former
+                            Commissioner of the Telecom Regulatory Commission of Sri Lanka, Member of the Council of
+                            Legal Education.</p></div>
+                </article>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>© Animal Venom Research International</span>
+        <span><a href="About%20AVRI.html">About us</a> &nbsp; <a href="Contact.html">Contact</a> &nbsp; <a
+                href="Resources.html">Resources</a> &nbsp; <a href="Donate.html">Donate</a></span>
+    </div>
+</footer>
+
+<script>
+    const header = document.querySelector('header');
+
+    function checkScroll() {
+        header.classList.toggle('small', window.scrollY > 40)
+    }
+
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+</script>
+</body>
+</html>

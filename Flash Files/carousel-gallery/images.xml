@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<slideshow>
+	<photo image="images/01.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 1" />
+	<photo image="images/02.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 2"/>
+	<photo image="images/03.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 3"/>
+	<photo image="images/04.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 4"/>
+	<photo image="images/05.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 5"/>
+	<photo image="images/06.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 6"/>
+	<photo image="images/07.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 7"/>
+	<photo image="images/08.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 8"/>
+	<photo image="images/09.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 9"/>
+	<photo image="images/10.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 10"/>
+	<photo image="images/11.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 11"/>
+	<photo image="images/12.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 12"/>
+	<photo image="images/13.jpg" url="http://www.flashxml.net/carousel-gallery.html" target="_self" info="Optional info for image 13"/>
+</slideshow>

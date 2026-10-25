@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Sri Lanka Antivenom Project | Animal Venom Research International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            --paper: #ecefe7;
+            --ink: #5a5959;
+            --moss: #2f4d3c;
+            --clay: #854b27;
+            --signal: #e8b628;
+            --line: #c9d0c2;
+            --card: #f8f9f4
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 17px/1.6 "Public Sans", Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--clay);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        header {
+            background: var(--ink);
+            color: var(--paper);
+            position: sticky;
+            top: 0;
+            z-index: 5
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            min-height: 64px;
+            flex-wrap: wrap;
+            transition: min-height .25s ease
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: .01em;
+            transition: height .25s ease
+        }
+
+        .brand img {
+            height: 44px;
+            width: auto;
+            display: block;
+            transition: height .25s ease
+        }
+
+        nav {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap
+        }
+
+        nav a {
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: padding .25s ease, background .15s
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, .12)
+        }
+
+        nav a[aria-current] {
+            background: rgba(255, 255, 255, .16)
+        }
+
+        nav a.give {
+            background: var(--signal);
+            color: var(--ink);
+            font-weight: 600
+        }
+
+        nav a.give:hover {
+            background: #f3c84e
+        }
+
+        header.small .wrap {
+            min-height: 48px
+        }
+
+        header.small .brand {
+            font-size: 17px
+        }
+
+        header.small nav a {
+            padding: 5px 12px
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            header .wrap, .brand, nav a {
+                transition: none
+            }
+        }
+
+        .hero {
+            padding: 56px 0 32px
+        }
+
+        .hero h1 {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(32px, 4.8vw, 54px);
+            line-height: 1.1;
+            letter-spacing: -.015em;
+            margin: 0 0 28px;
+            max-width: 16em
+        }
+
+        .banner {
+            margin: 0 auto 48px
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 260px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #000
+        }
+
+        .chain {
+            height: 14px;
+            background: radial-gradient(ellipse 14px 6px at 50% 50%, var(--clay) 60%, transparent 62%) 0 0/36px 14px repeat-x;
+            opacity: .75;
+            margin: 0 0 48px
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns:minmax(0, 1fr) 340px;
+            gap: 48px;
+            align-items: start;
+            margin-bottom: 96px
+        }
+
+        .text p {
+            margin: 0 0 20px;
+            max-width: 40em
+        }
+
+        .text .lede {
+            font-size: 20px;
+            color: var(--moss)
+        }
+
+        .text h2 {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 28px;
+            line-height: 1.2;
+            margin: 40px 0 16px
+        }
+
+        .text a {
+            color: var(--clay);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px
+        }
+
+        .text a:hover {
+            color: var(--ink)
+        }
+
+        .figs {
+            display: grid;
+            gap: 18px;
+            position: sticky;
+            top: 84px
+        }
+
+        figure {
+            margin: 0;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #000
+        }
+
+        figcaption {
+            padding: 10px 14px 12px;
+            font-size: 15px;
+            line-height: 1.4;
+            color: var(--moss)
+        }
+
+        footer {
+            background: var(--ink);
+            color: #b9c4b8;
+            padding: 32px 0;
+            font-size: 14px
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        footer a:hover {
+            color: #fff
+        }
+
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns:1fr;
+                gap: 32px
+            }
+
+            .figs {
+                position: static;
+                grid-template-columns:repeat(auto-fit, minmax(240px, 1fr))
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="wrap">
+        <a class="brand" href="index.html">
+            <img src="Images/Banners/Russels logo.png" alt="AVRI logo">
+            <span>Animal Venom Research International</span>
+        <nav aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="About%20AVRI.html">About us</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contact.html">Contact</a>
+            <a class="give" href="Donate.html">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="hero wrap">
+        <h1>The Sri Lanka Antivenom Project</h1>
+        <div class="banner"><img src="Images/Banners/hump-nose-banner-3.gif" alt="Hump-nosed viper banner"></div>
+    </div>
+
+    <div class="wrap">
+        <div class="chain" aria-hidden="true"></div>
+
+        <div class="layout">
+            <div class="text">
+                <p class="lede">AVRI is collaborating with <a
+                        href="http://icp.ucr.ac.cr/index.php?option=com_content&amp;task=view&amp;id=13&amp;Itemid=27&amp;lang=english"
+                        target="_blank" rel="noopener">Instituto Clodomiro Picado</a> (ICP) of the University of Costa
+                    Rica and the University of Peradeniya, Sri Lanka, (UOP) to develop a geographic regional and species
+                    specific snake antivenom for Sri Lanka. ICP is generously donating their time and resources to
+                    formulate an antivenom, from Sri Lankan snakes, with venom provided by AVRI. When the antivenom has
+                    been proven effective in pre clinical studies, the finished product will be presented to UOP where
+                    the clinical trials will be implemented, coordinated and monitored. When complete, this
+                    international collaborative effort will result in the provision of a much needed remedy for venomous
+                    snakebite that will save countless numbers of lives.</p>
+
+                <h2>Snakebite in Sri Lanka</h2>
+
+                <p>The island nation of Sri Lanka, in Southeast Asia, has one of the highest snakebite morbidity and
+                    mortality rates in the world. With a population of 20 million, approximately 40,000 people are
+                    bitten by snakes every year.</p>
+
+                <p>Available data place the snakebite mortality rate in Sri Lanka anywhere between 6 and 18 per 100,000
+                    in population. Under-reporting of deaths due to snakebite is problematic. Many individuals living in
+                    rural areas, where there are more problems with snakebite and limited access to biomedical care,
+                    never make it to a hospital or choose to seek alternative forms of treatment through traditional
+                    healers. There are many reasons for the high mortality rates due to snakebite in Sri Lanka,
+                    including: 1) the absence of an effective geographic regional, species-specific antivenom for Sri
+                    Lankan snake species; 2) inordinately high incidence of adverse reactions caused from using high
+                    doses of the ineffective antivenoms available; 3) the presence of multiple highly venomous species
+                    from both Viperidae and Elapidae families responsible for the most medically significant
+                    envenomations; and 4) delay in time to appropriate hospital treatment.</p>
+
+                <p>Antivenoms presently available in Sri Lanka are purchased from India and developed using venoms from
+                    snake species native to, and collected in, India. Thus, these Indian produced antivenoms are
+                    non-specific to many venom components of Sri Lankan snakes of the same species. Furthermore, they
+                    are manufactured under conditions of questionable quality control.</p>
+
+                <p>Three to eight times more Indian produced antivenom has been required to treat a patient in Sri Lanka
+                    than in India, bitten by the same species of snake, to achieve only marginal results. Reactions to
+                    antivenom therapy have been recorded in as high as 80% of snakebite victims in Sri Lanka. The
+                    severity of these reactions has been correlated to the volume of antivenom administered. Five
+                    species of medical significance found on the island are the <a href="/Russell%27s%20Viper.html">Russell’s
+                        viper,</a> <em>Daboia russelii</em>, <a href="/Spectacled%20Cobra.html">Spectacled cobra,</a>
+                    <em>Naja naja</em>, <a href="/Common%20Krait.html">Common krait,</a> <em>Bungarus caeruleus</em>, <a
+                            href="/Hump%20nosed%20viper.html">Hump-nosed viper,</a> <em>Hypnale hypnale</em>, and the <a
+                            href="/Saw-scaled%20Viper.html">Saw Scaled viper,</a> <em>Echis carinatus</em>. Of the
+                    deaths attributed to snakebite, the majority are caused by <em>D. russelii</em>, followed by <em>N.
+                        naja</em> and <em>B. caeruleus</em> respectively. <em>H. hypnale</em>, while rarely responsible
+                    for deaths, inflicts the greatest number of bites causing high morbidity resulting in
+                    hospitalization. Little is known about the effects of <em>E. carinatus</em> bites in Sri Lanka.</p>
+
+                <p>With Sri Lanka as the starting point, AVRI's objective is to reach into areas of the world suffering
+                    from the worst morbidity and mortality rates due to animal envenomations. The technology exists to
+                    improve pharmacotherapies, treatment protocols and quality of care within these regions.</p>
+            </div>
+
+            <aside class="figs" aria-label="Sri Lankan snakes">
+                <figure>
+                    <img src="Images/Snakes/DSC00845.gif" alt="Spectacled cobra">
+                    <figcaption>Spectacled Cobra, <em>Naja naja</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/Snakes/DSC00791.gif" alt="Russell's viper">
+                    <figcaption>Russell's Viper, <em>Daboia russelii</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/Snakes/DSC00767.gif" alt="Saw-scaled viper">
+                    <figcaption>Saw Scaled Viper, <em>Echis carinatus</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/Snakes/DSC01095.gif" alt="Hump-nosed viper">
+                    <figcaption>Hump-nosed Viper, <em>Hypnale hypnale</em></figcaption>
+                </figure>
+            </aside>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>© Animal Venom Research International</span>
+        <span><a href="About%20AVRI.html">About us</a> &nbsp; <a href="Contact.html">Contact</a> &nbsp; <a
+                href="Resources.html">Resources</a> &nbsp; <a href="Donate.html">Donate</a></span>
+    </div>
+</footer>
+
+<script>
+    const header = document.querySelector('header');
+
+    function checkScroll() {
+        header.classList.toggle('small', window.scrollY > 40)
+    }
+
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+</script>
+</body>
+</html>

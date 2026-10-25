@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings>
+	<groups>
+		<group snapToCell="true" gridPosition="BC" cellPosition="BC" orientation="horizontal" spacing="0">
+			<doubleButton>
+				<button out="skins/videoSkin1/play.jpg" over="skins/videoSkin1/playOver.jpg" down="skins/videoSkin1/playDown.jpg" action="play" tooltip="" />
+				<button out="skins/videoSkin1/pause.jpg" over="skins/videoSkin1/pauseOver.jpg" down="skins/videoSkin1/pauseDown.jpg" action="pause" tooltip="" />
+			</doubleButton>
+			<scrubBar back="skins/videoSkin1/back.gif"  position="skins/videoSkin1/barScrubber.gif" progress="skins/videoSkin1/bar.gif" dragOut="skins/videoSkin1/pointer.gif" dif="5"/>
+			<volume back="skins/videoSkin1/back.gif"  position="skins/videoSkin1/barScrubber.gif" progress="skins/videoSkin1/bar.gif" dragOut="skins/videoSkin1/pointer.gif" dif="5" width="40"/>
+		</group>
+		<group snapToCell="true" gridPosition="CC" cellPosition="CC" orientation="horizontal" spacing="0">
+			<button out="skins/videoSkin1/centerPlay.png" action="playBig" tooltip=""/>
+		</group>
+	</groups>
+</settings>

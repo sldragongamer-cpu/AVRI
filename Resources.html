@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resources | Animal Venom Research International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            --paper: #fffefe;
+            --ink: #4f4f4f;
+            --moss: #2f4d3c;
+            --clay: #9e592e;
+            --signal: #e8b628;
+            --line: #c9d0c2;
+            --card: #f8f9f4
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 17px/1.6 "Public Sans", Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--clay);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        header {
+            background: var(--ink);
+            color: var(--paper);
+            position: sticky;
+            top: 0;
+            z-index: 5
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            min-height: 90px;
+            flex-wrap: wrap;
+            transition: min-height .25s ease
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: 23px;
+            letter-spacing: .01em;
+            transition: height .25s ease
+        }
+
+        .brand img {
+            height: 44px;
+            width: auto;
+            display: block;
+            transition: height .25s ease
+        }
+
+        nav {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap
+        }
+
+        nav a {
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: padding .25s ease, background .15s
+        }
+
+        header.small .wrap {
+            min-height: 48px
+        }
+
+        header.small .brand {
+            font-size: 17px
+        }
+
+        header.small .brand img {
+            height: 32px
+        }
+
+        header.small nav a {
+            padding: 5px 12px
+        }
+
+        nav a:hover {
+            background: rgb(79, 79, 79)
+        }
+
+        nav a[aria-current] {
+            background: rgba(255, 255, 255, .16)
+        }
+
+        nav a.give {
+            background: var(--signal);
+            color: var(--ink);
+            font-weight: 600
+        }
+
+        nav a.give:hover {
+            background: #f3c84e
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+            header .wrap, .brand, nav a {
+                transition: none
+            }
+        }
+
+
+        /* full-width banner at the top, same as the home page */
+        .banner {
+            margin: 0
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 440px;
+            object-fit: cover;
+            border-radius: 0;
+            background: #000
+        }
+
+        .hero {
+            padding: 14px 0 40px
+        }
+
+        .hero h1 {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(34px, 5vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -.015em;
+            margin: 0
+        }
+
+        .chain {
+            height: 14px;
+            background: radial-gradient(ellipse 14px 6px at 50% 50%, var(--clay) 60%, transparent 62%) 0 0/36px 14px repeat-x;
+            opacity: .75;
+            margin: 0 0 48px
+        }
+
+        .soon {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 40px 28px;
+            margin-bottom: 96px;
+            max-width: 640px
+        }
+
+        .soon h2 {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 28px;
+            line-height: 1.2;
+            margin: 0 0 8px
+        }
+
+        .soon p {
+            margin: 0;
+            color: var(--moss)
+        }
+
+        .soon a {
+            color: var(--clay);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px
+        }
+
+        .soon a:hover {
+            color: var(--ink)
+        }
+
+        footer {
+            background: var(--ink);
+            color: #b9c4b8;
+            padding: 32px 0;
+            font-size: 14px
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        footer a:hover {
+            color: #fff
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="wrap">
+        <a class="brand" href="index.html">
+            <img src="Images/Banners/Russels logo.png" alt="AVRI logo">
+            <span>Animal Venom Research International</span>
+        </a>
+        <nav aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="About%20AVRI.html">About us</a>
+            <a href="Resources.html" aria-current="page">Resources</a>
+            <a href="Contact.html">Contact</a>
+            <a class="give" href="Donate.html">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="banner">
+        <img src="Images/Banners/hump-nose-banner-3.gif" alt="Hump-nosed viper banner">
+    </div>
+
+    <div class="hero wrap">
+        <h1>Resources</h1>
+    </div>
+
+    <div class="wrap">
+        <div class="chain" aria-hidden="true"></div>
+
+        <div class="soon">
+            <h2>Coming soon</h2>
+            <p>We are preparing resources on snakebite prevention and treatment. In the meantime, read about <a
+                    href="Snakebite.html">snakebite as a public health problem</a>.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>© Animal Venom Research International</span>
+        <span><a href="About%20AVRI.html">About us</a> &nbsp; <a href="Contact.html">Contact</a> &nbsp; <a
+                href="Resources.html">Resources</a> &nbsp; <a href="Donate.html">Donate</a></span>
+    </div>
+</footer>
+
+<script>
+    const header = document.querySelector('header');
+
+    function checkScroll() {
+        header.classList.toggle('small', window.scrollY > 40)
+    }
+
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+</script>
+</body>
+</html>

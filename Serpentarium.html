@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AVRI Serpentarium | Animal Venom Research International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            --paper: #ecefe7;
+            --ink: #4f4f4f;
+            --moss: #2f4d3c;
+            --clay: #8c4a22;
+            --signal: #f8bc15;
+            --line: #c9d0c2;
+            --card: #f8f9f4
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 17px/1.6 "Public Sans", Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--clay);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        header {
+            background: var(--ink);
+            color: var(--paper);
+            position: sticky;
+            top: 0;
+            z-index: 5
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            min-height: 64px;
+            flex-wrap: wrap;
+            transition: min-height .25s ease
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: .01em;
+            transition: height .25s ease
+        }
+
+        .brand img {
+            height: 44px;
+            width: auto;
+            display: block;
+            transition: height .25s ease
+        }
+        nav {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap
+        }
+
+        nav a {
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: padding .25s ease, background .15s
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, .12)
+        }
+
+        nav a[aria-current] {
+            background: rgba(255, 255, 255, .16)
+        }
+
+        nav a.give {
+            background: var(--signal);
+            color: var(--ink);
+            font-weight: 600
+        }
+
+        nav a.give:hover {
+            background: #f3c84e
+        }
+
+        header.small .wrap {
+            min-height: 48px
+        }
+
+        header.small .brand {
+            font-size: 17px
+        }
+
+        header.small nav a {
+            padding: 5px 12px
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            header .wrap, .brand, nav a {
+                transition: none
+            }
+        }
+
+        .hero {
+            padding: 56px 0 32px
+        }
+
+        .hero h1 {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(34px, 5vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -.015em;
+            margin: 0 0 28px
+        }
+
+        .banner {
+            margin: 0 auto 48px
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 260px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #000
+        }
+
+        .chain {
+            height: 14px;
+            background: radial-gradient(ellipse 14px 6px at 50% 50%, var(--clay) 60%, transparent 62%) 0 0/36px 14px repeat-x;
+            opacity: .75;
+            margin: 0 0 48px
+        }
+
+        h2 {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 28px;
+            line-height: 1.2;
+            margin: 0 0 20px
+        }
+
+        .gallery {
+            display: grid;
+            gap: 18px;
+            margin-bottom: 56px
+        }
+
+        .gallery.wide {
+            grid-template-columns:repeat(3, 1fr)
+        }
+
+        .gallery.tall {
+            grid-template-columns:repeat(2, 1fr);
+            max-width: 760px
+        }
+
+        figure {
+            margin: 0;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #000
+        }
+
+        figcaption {
+            padding: 10px 14px 12px;
+            font-size: 15px;
+            line-height: 1.4;
+            color: var(--moss)
+        }
+
+        .last {
+            margin-bottom: 96px
+        }
+
+        footer {
+            background: var(--ink);
+            color: #b9c4b8;
+            padding: 32px 0;
+            font-size: 14px
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        footer a:hover {
+            color: #fff
+        }
+
+        @media (max-width: 820px) {
+            .gallery.wide {
+                grid-template-columns:repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width: 520px) {
+            .gallery.wide, .gallery.tall {
+                grid-template-columns:1fr
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="wrap">
+        <a class="brand" href="index.html">
+            <img src="Images/Banners/Russels logo.png" alt="AVRI logo">
+            <span>Animal Venom Research International</span>
+        <nav aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="About%20AVRI.html">About us</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contact.html">Contact</a>
+            <a class="give" href="Donate.html">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="hero wrap">
+        <h1>AVRI Serpentarium</h1>
+        <div class="banner"><img src="Images/Banners/hump-nose-banner-3.gif" alt="Hump-nosed viper banner"></div>
+    </div>
+
+    <div class="wrap">
+        <div class="chain" aria-hidden="true"></div>
+
+        <h2>The building</h2>
+        <div class="gallery wide">
+            <figure>
+                <img src="Images/Serpentarium/DSC00300.gif" alt="Front of the serpentarium">
+                <figcaption>Serpentarium Front View</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/Serpentarium/DSC00816.gif" alt="Front of the serpentarium from another angle">
+                <figcaption>Serpentarium Front View</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/Serpentarium/DSC00184.gif" alt="Inside the serpentarium">
+                <figcaption>Serpentarium Inside</figcaption>
+            </figure>
+        </div>
+
+        <h2>Training the team</h2>
+        <div class="gallery tall last">
+            <figure>
+                <img src="Images/Serpentarium/DSC00412.gif" alt="Kristen Wiley teaching the team">
+                <figcaption>Kristen Wiley teaches the team to dispense medication</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/Serpentarium/DSC00279.gif" alt="Jim Harrison demonstrating to the team">
+                <figcaption>Jim Harrison shows the team how to determine a snake's gender</figcaption>
+            </figure>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>© Animal Venom Research International</span>
+        <span><a href="About%20AVRI.html">About us</a> &nbsp; <a href="Contact.html">Contact</a> &nbsp; <a
+                href="Resources.html">Resources</a> &nbsp; <a href="Donate.html">Donate</a></span>
+    </div>
+</footer>
+
+<script>
+    const header = document.querySelector('header');
+
+    function checkScroll() {
+        header.classList.toggle('small', window.scrollY > 40)
+    }
+
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+</script>
+</body>
+</html>

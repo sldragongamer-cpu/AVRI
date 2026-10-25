@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Donate | Animal Venom Research International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            --paper: #fffefe;
+            --ink: #4f4f4f;
+            --moss: #2f4d3c;
+            --clay: #824a26;
+            --signal: #e8b628;
+            --line: #c9d0c2;
+            --card: #f8f9f4
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 17px/1.6 "Public Sans", Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        a:focus-visible, input:focus-visible {
+            outline: 3px solid var(--clay);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        header {
+            background: var(--ink);
+            color: var(--paper);
+            position: sticky;
+            top: 0;
+            z-index: 5
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            min-height: 64px;
+            flex-wrap: wrap;
+            transition: min-height .25s ease
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: .01em;
+            transition: height .25s ease
+        }
+        .brand img {
+            height: 44px;
+            width: auto;
+            display: block;
+            transition: height .25s ease
+        }
+
+        nav {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap
+        }
+
+        nav a {
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: padding .25s ease, background .15s
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, .12)
+        }
+
+        nav a[aria-current] {
+            background: rgba(255, 255, 255, .16)
+        }
+
+        nav a.give {
+            background: var(--signal);
+            color: var(--ink);
+            font-weight: 600
+        }
+
+        nav a.give:hover {
+            background: #f3c84e
+        }
+
+        header.small .wrap {
+            min-height: 48px
+        }
+
+        header.small .brand {
+            font-size: 17px
+        }
+
+        header.small nav a {
+            padding: 5px 12px
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            header .wrap, .brand, nav a {
+                transition: none
+            }
+        }
+
+        .hero {
+            padding: 56px 0 32px
+        }
+
+        .hero h1 {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(34px, 5vw, 56px);
+            line-height: 1.1;
+            letter-spacing: -.015em;
+            margin: 0 0 28px
+        }
+
+        .banner {
+            margin: 0 auto 48px
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 260px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #000
+        }
+
+        .chain {
+            height: 14px;
+            background: radial-gradient(ellipse 14px 6px at 50% 50%, var(--clay) 60%, transparent 62%) 0 0/36px 14px repeat-x;
+            opacity: .75;
+            margin: 0 0 48px
+        }
+
+        h2 {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 26px;
+            line-height: 1.2;
+            margin: 0 0 14px
+        }
+
+        .cols {
+            display: grid;
+            grid-template-columns:340px 1fr;
+            gap: 24px;
+            margin-bottom: 72px;
+            align-items: start
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 28px
+        }
+
+        .card p {
+            margin: 0 0 16px;
+            max-width: 38em
+        }
+
+        .card p:last-child {
+            margin-bottom: 0
+        }
+
+        .pay {
+            background: var(--signal);
+            border-color: var(--signal);
+            text-align: center
+        }
+
+        .pay p {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.3;
+            margin: 0 0 20px
+        }
+
+        .pay form {
+            margin: 0
+        }
+
+        .pay input[type=image] {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 6px
+        }
+
+        .address {
+            font-style: normal;
+            font-size: 19px;
+            line-height: 1.5;
+            margin: 0 0 16px
+        }
+
+        .address strong {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700
+        }
+
+        .stack {
+            display: grid;
+            gap: 18px
+        }
+
+        .card a.link {
+            color: var(--clay);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px
+        }
+
+        .card a.link:hover {
+            color: var(--ink)
+        }
+
+        footer {
+            background: var(--ink);
+            color: #b9c4b8;
+            padding: 32px 0;
+            font-size: 14px
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        footer a:hover {
+            color: #fff
+        }
+
+        @media (max-width: 760px) {
+            .cols {
+                grid-template-columns:1fr
+            }
+
+            .card {
+                padding: 22px
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="wrap">
+        <a class="brand" href="index.html">
+            <img src="Images/Banners/Russels logo.png" alt="AVRI logo">
+            <span>Animal Venom Research International</span>
+        </a>
+        <nav aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="About%20AVRI.html">About us</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contact.html">Contact</a>
+            <a class="give" href="Donate.html" aria-current="page">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="hero wrap">
+        <h1>Donate</h1>
+        <div class="banner"><img src="Images/Banners/rice-paddy-banner.gif" alt="Rice paddy banner"></div>
+    </div>
+
+    <div class="wrap">
+        <div class="chain" aria-hidden="true"></div>
+
+        <div class="cols">
+            <div class="card pay">
+                <p>Give online with PayPal</p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="GNZECCX7B6MJ4">
+                    <input type="image" src="Images/buttons/Donate-Button.gif" name="submit" alt="Donate with PayPal">
+                    <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+
+            <div class="stack">
+                <div class="card">
+                    <h2>Donations can be sent by mail to</h2>
+                    <address class="address">
+                        <strong>Animal Venom Research International</strong><br>
+                        P.O. Box 641<br>
+                        Moreno Valley, CA 92556
+                    </address>
+                    <p><strong>Email:</strong> <a class="link" href="mailto:avri@usavri.org">avri@usavri.org</a></p>
+                    <p>AVRI is a 501(c)(3) nonprofit organization reliant on public support. Your generous donations are
+                        greatly appreciated.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Grants</h2>
+                    <p>AVRI welcomes grants for operating support or specific program functions. Please contact us if
+                        you are interested in contributing.</p>
+                    <p>You can view our Federal non-profit determination letter <a class="link"
+                                                                                   href="/AVRI%20Determination%20Letter%207-20-10.pdf">here</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>© Animal Venom Research International</span>
+        <span><a href="About%20AVRI.html">About us</a> &nbsp; <a href="Contact.html">Contact</a> &nbsp; <a
+                href="Resources.html">Resources</a> &nbsp; <a href="Donate.html">Donate</a></span>
+    </div>
+</footer>
+
+<script>
+    const header = document.querySelector('header');
+
+    function checkScroll() {
+        header.classList.toggle('small', window.scrollY > 40)
+    }
+
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+</script>
+</body>
+</html>

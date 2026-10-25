@@ -1,0 +1,42 @@
+/**
+ * Gallery 3 Grey Dragon Theme
+ * Copyright (C) 2006-2010 Serguei Dosyukov
+ *
+ * CSS rules - Frames - Panel
+ */
+
+.g-album .g-thumbslide,
+.g-thumbslide {
+  border-width: 1px;
+  border-style: solid;
+}
+.g-thumbslide .g-description {
+  margin: 0 0 0 1px;
+}
+.g-thumbslide .g-metadata {
+  margin-bottom: 3px;
+  margin-left: 1px;
+}
+
+.g-item .g-context-menu {
+  left: 188px;
+  top: 12px;
+}
+.g-item .g-context-menu:hover {
+  left: 6px;
+  top: 6px;
+}
+.g-item.g-extended .g-context-menu {
+  left: 288px;
+  top: 12px;
+}
+.g-item.g-extended .g-context-menu:hover {
+  left: 6px;
+  top: 6px;
+}
+
+.g-default .g-thumbslide .g-description,
+.g-expanded .g-thumbslide .g-description,
+.g-thumbslide .g-metadata {
+  border-color: #adaead;
+}

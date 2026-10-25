@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Venomous Snakebite: A Global Public Health Problem | Animal Venom Research International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            --paper: #fffefe;
+            --ink: #4f4f4f;
+            --moss: #2f4d3c;
+            --clay: #8c4a22;
+            --signal: #e8b628;
+            --line: #c9d0c2;
+            --card: #f8f9f4
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 17px/1.6 "Public Sans", Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--clay);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+       header {
+            background: var(--ink);
+            color: var(--paper);
+            position: sticky;
+            top: 0;
+            z-index: 5
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            min-height: 90px;
+            flex-wrap: wrap;
+            transition: min-height .25s ease
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: 23px;
+            letter-spacing: .01em;
+            transition: height .25s ease
+        }
+
+        .brand img {
+            height: 44px;
+            width: auto;
+            display: block;
+            transition: height .25s ease
+        }
+
+        nav {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap
+        }
+
+        nav a {
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: padding .25s ease, background .15s
+        }
+
+        header.small .wrap {
+            min-height: 48px
+        }
+
+        header.small .brand {
+            font-size: 17px
+        }
+
+        header.small .brand img {
+            height: 32px
+        }
+
+        header.small nav a {
+            padding: 5px 12px
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, .12)
+        }
+
+        nav a[aria-current] {
+            background: rgba(255, 255, 255, .16)
+        }
+
+        nav a.give {
+            background: var(--signal);
+            color: var(--ink);
+            font-weight: 600
+        }
+
+        nav a.give:hover {
+            background: #f3c84e
+        }
+
+
+        .hero {
+            padding: 14px 0 40px
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+            header .wrap, .brand, nav a {
+                transition: none
+            }
+        }
+
+        .hero h1 {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(32px, 4.8vw, 54px);
+            line-height: 1.1;
+            letter-spacing: -.015em;
+            margin: 0 0 28px;
+            max-width: 16em
+        }
+
+        .banner {
+            margin: 0 auto 48px
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 260px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #000
+        }
+
+        .chain {
+            height: 14px;
+            background: radial-gradient(ellipse 14px 6px at 50% 50%, var(--clay) 60%, transparent 62%) 0 0/36px 14px repeat-x;
+            opacity: .75;
+            margin: 0 0 48px
+        }
+
+        .article {
+            display: grid;
+            grid-template-columns:minmax(0, 1fr) 340px;
+            gap: 48px;
+            align-items: start;
+            margin-bottom: 72px
+        }
+
+        .text p {
+            margin: 0 0 20px;
+            max-width: 40em
+        }
+
+        .text p:first-child {
+            font-size: 20px;
+            color: var(--moss)
+        }
+
+        .figs {
+            display: grid;
+            gap: 18px;
+            position: sticky;
+            top: 84px
+        }
+
+        figure {
+            margin: 0;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #000
+        }
+
+        figcaption {
+            padding: 10px 14px 12px;
+            font-size: 14.5px;
+            line-height: 1.4;
+            color: var(--moss)
+        }
+
+        footer {
+            background: var(--ink);
+            color: #b9c4b8;
+            padding: 32px 0;
+            font-size: 14px
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        footer a:hover {
+            color: #fff
+        }
+
+        @media (max-width: 900px) {
+            .article {
+                grid-template-columns:1fr;
+                gap: 32px
+            }
+
+            .figs {
+                position: static;
+                grid-template-columns:repeat(auto-fit, minmax(240px, 1fr))
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="wrap">
+        <a class="brand" href="index.html">
+            <img src="Images/Banners/Russels logo.png" alt="AVRI logo">
+            <span>Animal Venom Research International</span>
+        </a>
+        <nav aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="About%20AVRI.html">About us</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contact.html">Contact</a>
+            <a class="give" href="Donate.html">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="hero wrap">
+        <h1>Venomous Snakebite: A Global Public Health Problem</h1>
+        <div class="banner"><img src="Images/Banners/hump-nose-banner-3.gif" alt="Hump-nosed viper banner"></div>
+    </div>
+
+    <div class="wrap">
+        <div class="chain" aria-hidden="true"></div>
+
+        <div class="article">
+            <div class="text">
+                <p>Despite the recognition of snakebite as a significant neglected public health issue by the World
+                    Health Organization, and other agencies, progress to resolve the problem has been limited in
+                    tropical ecozone regions of the world where it is needed most. Additional efforts by toxinology
+                    leaders/scientists, and the recently established Global Snakebite Initiative are in current pursuit
+                    of resolution, but are constrained by limited economic resources. In addition, the lack of
+                    recognition of the magnitude of this problem by regional and national health authorities in many
+                    parts of the world further complicates the solution of this problem.</p>
+
+                <p>The true impact of snakebite may never be known, especially in respect to the fact that most
+                    snakebites occur in rural, underserved areas with poor case reporting. The primary burden of
+                    snakebite envenomation falls on the inhabitants of developing countries in tropical and subtropical
+                    regions. Indeed, the highest morbidity and mortality rates occur in South Asia, Southeast Asia, and
+                    sub-Saharan Africa.</p>
+
+                <p>Snakebite has also been overlooked as an occupational hazard with most bites occurring on the feet,
+                    legs and hands of agricultural workers. Venomous snakebite patients all too frequently receive
+                    inadequate treatment due to a lack of antivenom availability, and in many instances due to the
+                    unavailability of antivenom with good pharmacotherapeutic effectiveness. The native people of Sri
+                    Lanka suffer 40,000 venomous snakebites annually, and the country has one of the highest snakebite
+                    mortality rates in the world. The difficulty of treating snake envenomed patients with less than
+                    optimal therapy is frustrating for medical professionals, and of considerable health costs and
+                    personal loss to the patient.</p>
+
+                <p>The bite from a venomous snake resulting in envenomation can have serious consequences causing
+                    disability and death. The snake species causing the highest morbidity and mortality rates world wide
+                    are those from the families Viperidae (true vipers, lance-head pit vipers, and rattlesnakes) and
+                    Elapidae (kraits, cobras, coral snakes, mambas, Australasian snakes and sea snakes). The species
+                    responsible for the most problems differs depending on the region.</p>
+
+                <p>Envenomings cause a variety of effects on the body, both local (at the site of the bite and adjacent
+                    tissue) and systemic (via circulatory system, involving distant, multiple organs of the body). The
+                    most critical consequences of snake bite envenoming include shock, spontaneous systemic bleeding,
+                    paralysis involving respiratory muscles, generalized break down of skeletal muscle (rhabdomyolysis),
+                    acute renal failure and infection of necrotic tissue at the site of the bite. The chemical
+                    composition of venom is complex, varying among different species and even within individuals of the
+                    same species. The damaging effects of envenomation occur rapidly after a bite making the time
+                    between sustaining the bite and receiving treatment of paramount importance.</p>
+            </div>
+
+            <aside class="figs" aria-label="Clinical photographs">
+                <figure>
+                    <img src="Images/snakebite%20pics/lateralising-neurological.gif"
+                         alt="Patient showing lateralising neurological signs">
+                    <figcaption>Lateralising neurological signs of intracranial bleeding</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/snakebite%20pics/gingival-bleeding.gif" alt="Gingival bleeding">
+                    <figcaption>Gingival bleeding</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/snakebite%20pics/echis-ocellatus-bite.gif"
+                         alt="Tissue necrosis from a carpet viper bite">
+                    <figcaption>Necrosis from a West African carpet viper, <em>Echis ocellatus</em>, bite</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/snakebite%20pics/Antivenom-swazi-4.gif" alt="Spitting cobra bite">
+                    <figcaption>Bite from a spitting cobra</figcaption>
+                </figure>
+            </aside>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>© Animal Venom Research International</span>
+        <span><a href="About%20AVRI.html">About us</a> &nbsp; <a href="Contact.html">Contact</a> &nbsp; <a
+                href="Resources.html">Resources</a> &nbsp; <a href="Donate.html">Donate</a></span>
+    </div>
+</footer>
+
+<script>
+    const header = document.querySelector('header');
+
+    function checkScroll() {
+        header.classList.toggle('small', window.scrollY > 40)
+    }
+
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+</script>
+</body>
+</html>

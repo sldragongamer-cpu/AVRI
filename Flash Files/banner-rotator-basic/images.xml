@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<slideshow>
+	<photo image="images/01.gif" url="http://www.flashxml.net/banner-rotator-basic.html" target="_self" duration="3"/>
+	<photo image="images/02.gif" url="http://www.flashxml.net/banner-rotator-basic.html" target="_self" duration="3"/>
+	<photo image="images/03.gif" url="http://www.flashxml.net/banner-rotator-basic.html" target="_self" duration="5"/>
+	<photo image="images/04.gif" url="http://www.flashxml.net/banner-rotator-basic.html" target="_self" duration="3"/>
+</slideshow>

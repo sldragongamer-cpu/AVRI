@@ -1,0 +1,99 @@
+<settings>
+  <General_Properties>
+    <direction value="horizontal"/>
+    <width value="600"/>
+    <height value="100"/>
+    <stretchWidth value="false"/>
+    <stretchHeight value="false"/>
+    <spacing value="3"/>
+    <thumbWidth value="79"/>
+    <thumbHeight value="59"/>
+    <center value="false"/>
+    <offset value="15"/>
+    <preloader value="assets/redstripes.swf"/>
+    <assets value="images2/thumbs.xml"/>
+    <showAbout value="true"/>
+  </General_Properties>
+  <Background_Properties>
+    <fillType value="solid"/>
+    <backgroundColor1 value="0x330000"/>
+    <backgroundColor2 value="0x000099"/>
+    <backgroundAlpha value="1"/>
+    <bgCornerRadius value="35"/>
+    <gradientRotation value="46"/>
+    <gradientRatio value="172"/>
+    <gradientPosX value="-92"/>
+    <gradientPosY value="0"/>
+  </Background_Properties>
+  <Shade_Properties>
+    <useShade value="true"/>
+    <shadeColor value="0x660000"/>
+    <shadeAlpha value="1"/>
+    <shadeRatio value="237"/>
+    <shadeWidth value="0"/>
+    <shadeHeight value="1000"/>
+  </Shade_Properties>
+  <Expand_Properties>
+    <direction value="up/right"/>
+    <percent value="25"/>
+    <func value="Back"/>
+    <method value="easeOut"/>
+    <duration value="0.6"/>
+  </Expand_Properties>
+  <Roll_Over_Properties>
+    <rollOverBehaviour value="smooth"/>
+    <brightnessOver value="35"/>
+    <brightnessOut value="-25"/>
+    <brightnessSpeed value="7"/>
+  </Roll_Over_Properties>
+  <Frame_Properties>
+    <color value="0xffffff"/>
+    <width value="0"/>
+    <alpha value="0"/>
+    <selectedColor value="0x3366ff"/>
+    <selectedWidth value="12"/>
+    <selectedAlpha value="1"/>
+  </Frame_Properties>
+  <Reflection_Properties>
+    <useReflection value="true"/>
+    <reflectionDistance value="1"/>
+    <reflectionAlpha value="0.3"/>
+    <reflectionSpread value="116.3"/>
+  </Reflection_Properties>
+  <Scroll_Properties>
+    <scrollMode value="infinite"/>
+    <scrollOnRollOver value="images"/>
+    <onRollOverSpeed value="20"/>
+    <onRollOutSpeed value="-15"/>
+    <stoppingSpeed value="60"/>
+    <stopOnRollOver value="false"/>
+    <inverseScrolling value="none"/>
+    <buttonScrollMode value="pixel by pixel"/>
+    <buttonImage value="assets/arrow1.png"/>
+    <buttonsX value="151"/>
+    <buttonsY value="175"/>
+    <buttonDistance value="302"/>
+  </Scroll_Properties>
+  <Tooltip_Properties>
+    <position value="top"/>
+    <delay value="0.3"/>
+    <distance value="3"/>
+    <padding value="5"/>
+    <cornerRadius value="2"/>
+    <appearance value="center"/>
+    <easingFunction value="Strong"/>
+    <easingDuration value="0.3"/>
+    <fontFace value="verdana"/>
+    <fontSize value="13"/>
+    <fontColor value="16777215"/>
+    <backColor value="0x0066ff"/>
+    <backColor2 value="0x000066"/>
+    <backAlpha value="0.9"/>
+    <borderColor value="0x000099"/>
+    <borderThickness value="1"/>
+    <useArrow value="true"/>
+    <arrowPos value="center"/>
+    <arrowSize value="5"/>
+    <embedFonts value="false"/>
+  </Tooltip_Properties>
+</settings>

@@ -1,0 +1,29 @@
+ShadowBox Integration Module Changelog
+
+version 1.9:
+- Added support for overlay manipulation
+
+version 1.8:
+- Added translation logic for help info
+
+version 1.7
+- Module info adjusted to match new format in G3 3.0.2+
+- Added admin area
+
+version 1.6
+- Adjusted to comply with G3 v 3.0.1. Changed code structure to allow bundling of the CSS/JS code
+
+version 1.5
+- ShadowBox updated to latest version
+
+version 1.4
+- Small adjustments
+
+version 1.3
+- Fixed issue with relative path to the JS/CSS
+
+version 1.2
+- Fixed issue with Ajax player allowing proper jQuery event handling
+
+version 1.1
+- Initial release 

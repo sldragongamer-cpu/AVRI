@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animal Venom Research International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+            --paper: #fffefe;
+            --ink: #4f4f4f;
+            --moss: #2f4d3c;
+            --clay: #9e592e;
+            --signal: #e8b628;
+            --line: #c9d0c2;
+            --card: #f8f9f4;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 17px/1.6 "Public Sans", Arial, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--clay);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+
+        header {
+            background: var(--ink);
+            color: var(--paper);
+            position: sticky;
+            top: 0;
+            z-index: 5
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            min-height: 90px;
+            flex-wrap: wrap;
+            transition: min-height .25s ease
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: 23px;
+            letter-spacing: .01em;
+            transition: height .25s ease
+        }
+
+        .brand img {
+            height: 44px;
+            width: auto;
+            display: block;
+            transition: height .25s ease
+        }
+
+        nav {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap
+        }
+
+        nav a {
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: padding .25s ease, background .15s
+        }
+
+        header.small .wrap {
+            min-height: 48px
+        }
+
+        header.small .brand {
+            font-size: 17px
+        }
+
+        header.small .brand img {
+            height: 32px
+        }
+
+        header.small nav a {
+            padding: 5px 12px
+        }
+
+        nav a:hover {
+            background: rgb(79, 79, 79)
+        }
+
+        nav a[aria-current] {
+            background: rgba(255, 255, 255, .16)
+        }
+
+        nav a.give {
+            background: var(--signal);
+            color: var(--ink);
+            font-weight: 600
+        }
+
+        nav a.give:hover {
+            background: #f3c84e
+        }
+
+
+        .hero {
+            padding: 14px 0 40px
+        }
+
+        .hero h1 {
+            font-family: Fraunces, Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(34px, 5.4vw, 62px);
+            line-height: 1.08;
+            letter-spacing: -.015em;
+            margin: 0 0 22px;
+            max-width: 17em;
+        }
+
+        .hero p {
+            max-width: 34em;
+            font-size: 19px;
+            color: var(--moss);
+            margin: 0 0 30px
+        }
+
+        .btns {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 6px;
+            font-weight: 600
+        }
+
+        .btn.primary {
+            background: var(--ink);
+            color: var(--paper)
+        }
+
+        .btn.primary:hover {
+            background: var(--moss)
+        }
+
+        .btn.ghost {
+            border: 2px solid var(--ink)
+        }
+
+        .btn.ghost:hover {
+            background: var(--ink);
+            color: var(--paper)
+        }
+
+        .banner {
+            margin: 0;
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 440px;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+
+        .chain {
+            height: 14px;
+            background: radial-gradient(ellipse 14px 6px at 50% 50%, var(--clay) 60%, transparent 62%) 0 0/36px 14px repeat-x;
+            opacity: .75;
+            margin: 0 0 48px;
+        }
+
+
+        h2 {
+            font-family: Fraunces, Georgia, serif;
+            font-size: 30px;
+            margin: 0 0 24px;
+            line-height: 1.2
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr; /* all cards same height */
+            gap: 15px;
+            margin-bottom: 68px
+        }
+
+        .item {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+            transition: background .2s ease, color .2s ease, border-color .2s ease,
+            transform .2s ease, box-shadow .2s ease;
+        }
+
+        /* bigger arrow in a circle badge */
+        .item::after {
+            content: "→";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin-left: auto;
+            border-radius: 50%;
+            background: var(--clay);
+            color: #fff;
+            font-size: 30px;
+            line-height: 1;
+            padding-bottom: 3px; /* centers the arrow glyph optically */
+            flex: none;
+            transition: transform .2s ease, background .2s ease, color .2s ease;
+        }
+
+        /* card pops out on hover + keyboard focus */
+        .item:hover,
+        .item:focus-visible {
+            background: var(--ink);
+            color: var(--paper);
+            border-color: var(--ink);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, .25);
+        }
+
+        .item:hover::after,
+        .item:focus-visible::after {
+            background: var(--signal);
+            color: var(--ink);
+            transform: translateX(6px);
+        }
+
+        .item img {
+            width: 96px;
+            height: 96px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex: none;
+            background: #000
+        }
+
+        .item span {
+            font-weight: 500;
+            line-height: 1.4
+        }
+
+        footer {
+            background: var(--ink);
+            color: #b9c4b8;
+            padding: 32px 0;
+            font-size: 14px
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        footer a:hover {
+            color: #fff
+        }
+
+        @media (max-width: 720px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .hero {
+                padding-top: 14px
+            }
+        }
+
+        /* no lift or slide for people who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .item, .item::after {
+                transition: none;
+            }
+
+            .item:hover, .item:focus-visible {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="wrap">
+        <a class="brand" href="index.html">
+            <img src="Images/Banners/Russels logo.png" alt="AVRI logo">
+            <span>Animal Venom Research International</span>
+        </a>
+        <nav aria-label="Main">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="About%20AVRI.html">About us</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contact.html">Contact</a>
+            <a class="give" href="Donate.html">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="banner">
+        <img src="Images/Banners/Russells-Banner.gif" alt="Russell's viper banner">
+    </div>
+
+    <section class="hero wrap">
+        <h1>Working to alleviate world-wide suffering caused by animal envenomation.</h1>
+        <p>Snakebite kills and disables tens of thousands of people every year, mostly in rural communities. AVRI works
+            to change that, starting in Sri Lanka.</p>
+        <div class="btns">
+            <a class="btn primary" href="Snakebite.html">Understand snakebite</a>
+            <a class="btn ghost" href="Donate.html">Donate today</a>
+        </div>
+    </section>
+
+
+    <div class="wrap">
+        <div class="chain" aria-hidden="true"></div>
+        <h2>Explore our work</h2>
+
+        <div class="grid">
+            <a class="item" href="Snakebite.html">
+                <img src="Images/Homepage%20Thumbs/04.gif" alt="">
+                <span>Venomous snake bite: A neglected tropical disease</span>
+            </a>
+
+            <a class="item" href="Donate.html">
+                <img src="Images/Homepage%20Thumbs/01.gif" alt="">
+                <span>Help AVRI stop suffering due to snakebite. Donate today.</span>
+            </a>
+
+            <a class="item" href="Sri%20Lanka%20Project.html">
+                <img src="Images/Homepage%20Thumbs/05.gif" alt="">
+                <span>The Sri Lanka Antivenom Project: a multinational effort between AVRI, Instituto Clodomiro Picado and the University of Peradeniya</span>
+            </a>
+
+            <a class="item" href="Serpentarium.html">
+                <img src="Images/Homepage%20Thumbs/hump.gif" alt="">
+                <span>Take a virtual tour of the AVRI Serpentarium in Sri Lanka</span>
+            </a>
+
+            <a class="item" href="VenomousSnakes.html">
+                <img src="Images/Homepage%20Thumbs/cobra3.gif" alt="">
+                <span>Learn about the venomous snakes of Sri Lanka</span>
+            </a>
+
+            <a class="item" href="Toxicon.html">
+                <img src="Images/Homepage%20Thumbs/IST.gif" alt="">
+                <span>Read our abstract from the International Society on Toxinology meeting, published July 2013 in Toxicon</span>
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>© Animal Venom Research International</span>
+        <span>Develper:-Lithula Dilain Wijesinghe
+            <br>
+            Bomiriya Central College Kaduwella Sri Lanka , Grade 9
+            <br>
+            Linkedin:-www.linkedin.com/in/lithula-dilain-wijesinghe-2b08b93b3
+            <br>
+        Lithula7@gmail.com</span>
+        <span><a href="About%20AVRI.html">About us</a> &nbsp; <a href="Contact.html">Contact</a> &nbsp; <a
+                href="Resources.html">Resources</a> &nbsp; <a href="Donate.html">Donate</a></span>
+    </div>
+</footer>
+<script>
+    const header = document.querySelector('header');
+
+    function checkScroll() {
+        header.classList.toggle('small', window.scrollY > 60);
+    }
+
+    window.addEventListener('scroll', checkScroll, {passive: true});
+    checkScroll();
+</script>
+</body>
+</html>

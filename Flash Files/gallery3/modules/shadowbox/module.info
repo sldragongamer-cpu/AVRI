@@ -1,0 +1,7 @@
+name        = "Shadowbox"
+description = "Adds support for Shadowbox Media Viewer. <br />Version 1.9 | By <a href=http://blog.dragonsoft.us>Serguei Dosyukov</a> | <a href=http://codex.gallery2.org/Gallery3:Modules:shadowbox>Visit plugin Site</a> | <a href=http://gallery.menalto.com/node/91456>Support</a> | <a href=shadowbox>Settings</a>"
+version     = 19
+author_name = "Serguei Dosyukov"
+author_url  = "http://blog.dragonsoft.us/gallery-3/"
+info_url    = "http://codex.gallery2.org/Gallery3:Modules:shadowbox"
+discuss_url = "http://gallery.menalto.com/node/91456"

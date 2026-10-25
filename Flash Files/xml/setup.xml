@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+	<images imagesFolder="imagesdl" bigImageWidth="300" bigImageHeight="300" thumbsFolder="imagesdl" thumbnailsWidth="50" thumbnailsHeight="50"/>
+	<buttonsLabels imageButton="Photo" textButton="Information"/>
+	<other thumbTextWidth="212" bigImagePosition="left" scrollAreaEnabled="true" scrollAreaEdge="20" scrollTweenSpeed="30" scrollBarColor="555555" thumbsSpacing="4"/>
+	<largeText txtFont="Verdana" fontSize="14" fontColor="aaaaaa"/>
+	<thumbText thumbFont="Verdana" fontSize="12" fontColor="aaaaaa"/>
+	<largeImageLoading largeLoadingFont="Verdana" fontSize="14" fontColor="aaaaaa"/>
+	<thumbnailImageLoading thumbLoadingFont= "Verdana" fontSize="10" fontColor="aaaaaa"/>
+</setup>

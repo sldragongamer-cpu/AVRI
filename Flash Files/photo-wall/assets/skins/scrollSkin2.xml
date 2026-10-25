@@ -1,0 +1,5 @@
+<data>
+	<buttons out="assets/skins/skin2/left.png" over="assets/skins/skin2/leftOver.png" down="assets/skins/skin2/left.png"/>
+	<dragBar out="assets/skins/skin2/dragBar.png" over="assets/skins/skin2/dragBar.png" down="assets/skins/skin2/dragBar.png"/>
+	<back value="assets/skins/skin2/back.png"/>
+</data>

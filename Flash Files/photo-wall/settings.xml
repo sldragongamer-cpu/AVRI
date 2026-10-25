@@ -1,0 +1,70 @@
+<settings>
+  <General_Properties>
+    <assets value="images.xml"/>
+    <display value="vertical"/>
+    <displayValue value="94"/>
+    <spacing value="4"/>
+    <componentWidth value="600"/>
+    <componentHeight value="400"/>
+    <showAbout value="true"/>
+  </General_Properties>
+  <Image_Properties>
+    <click value="expand"/>
+    <closeButton value="assets/skins/close.png"/>
+    <expandHoverPercent value="5"/>
+    <expandHoverTime value="0.5"/>
+    <expandTime value="0.3"/>
+    <effectType value="max"/>
+    <effectOut value="0"/>
+    <effectOver value="5"/>
+    <effectRatio value="4"/>
+    <useBorder value="false"/>
+    <borderColor value="0xffffff"/>
+    <borderSize value="10"/>
+    <borderAlpha value="0.5"/>
+    <cornerRadius value="0"/>
+    <useGlow value="true"/>
+    <glowColor value="0xffffff"/>
+  </Image_Properties>
+  <Textbox_Properties>
+    <style value="assets/css/style3.css"/>
+    <position value="bottom"/>
+    <backColor1 value="0xffffff"/>
+    <backColor2 value="0xffffff"/>
+    <backAlpha value="0.3"/>
+    <backRatio value="255"/>
+    <backAngle value="1.55"/>
+    <borderColor value="0xffffff"/>
+    <borderSize value="1"/>
+    <borderAlpha value="0.5"/>
+    <padding value="10"/>
+    <embedFonts value="false"/>
+  </Textbox_Properties>
+  <Background_Properties>
+    <fillType value="radial"/>
+    <backgroundImage value=""/>
+    <backgroundColor1 value="0x444444"/>
+    <backgroundColor2 value="0x000000"/>
+    <backgroundAlpha value="1"/>
+    <bgCornerRadius value="7"/>
+    <gradientRotation value="27"/>
+    <gradientRatio value="28"/>
+    <gradientPosX value="-396"/>
+    <gradientPosY value="-207"/>
+  </Background_Properties>
+  <Shade_Properties>
+    <useShade value="false"/>
+    <shadeColor value="0x000000"/>
+    <shadeAlpha value="1"/>
+    <shadeRatio value="40"/>
+    <shadeWidth value="0"/>
+    <shadeHeight value="0"/>
+  </Shade_Properties>
+  <Scroll_Properties>
+    <skin value="assets/skins/scrollSkin4.xml"/>
+    <mouseWheel value="true"/>
+    <autoScroll value="true"/>
+    <scrollAmount value="30"/>
+    <moveRatio value="10"/>
+  </Scroll_Properties>
+</settings>
